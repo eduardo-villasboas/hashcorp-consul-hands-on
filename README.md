@@ -12,6 +12,27 @@ Listar os membros do cluster
 consul members
 ```
 
+install dig
+```bash
+apk -U add bind-tools
+```
+
+consulta de DNS (Só batendo no DNS)
+```bash
+dig @localhost -p 8600
+```
+
+consulta de DNS expecífica do DOMINIO/IP
+```bash
+dig @localhost -p 8600 consul01.node.consul
+```
+
+consula de DNS trazendo somente o IP
+```bash
+dig @localhost -p 8600 consul01.node.consul +short
+```
+
+
 ### Tipos de processos consul
 - server ou client
 - em produção pelo menos 3 máquinas e sempre números ímpares
